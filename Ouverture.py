@@ -1,0 +1,120 @@
+from Utilitaire import *
+
+# Fonction qui permet de créer les différentes fenetres :
+def fenetre():
+    penup()
+    right(90)
+    forward(60)
+    left(90)
+    forward(15)
+# Fenetres hublots :
+    if rd() >=75 :
+        pu()
+        left(90)
+        fd(15)
+        right(90)
+        back(5)
+        for i in range (3) :
+            fd(20)
+            pd()
+            begin_fill()
+            fillcolor("#ffffff")
+            circle(15)
+            end_fill()
+            pu()
+            fd(20)
+        left (90)
+        bk(15)
+        right(90)
+        bk(130)
+        left(90)
+        fd(60)
+        right(90)
+
+    else :
+# Fenetres carré :
+        for i in range(3):
+            if rd() >= 50  :
+                pu()
+                left(90)
+                fd(20)
+                right(90)
+                begin_fill()
+                fillcolor("#ffffff")
+                pd()
+                for i in range (4): 
+                    fd(30)
+                    left(90)
+                end_fill()
+                pu()
+                right(90)
+                fd(20)
+                left(90)
+# Portes fenetres avec balcons :
+            else :
+                pu()
+                begin_fill()
+                fillcolor("#ffffff")
+                pd()
+                for i in range(2):
+                    fd(30)
+                    left(90)
+                    fd(50)
+                    left(90)
+                end_fill()
+#Création des barrieres
+                pensize(3)
+                right(180)
+                fd(5)
+                for i in range (2):
+                    right(90)
+                    fd(20)
+                    right(90)
+                    fd(40)
+                for i in range (4):
+                    bk(5)
+                    left(90)
+                    bk(20)
+                    right(90)
+                    bk(5)
+                    right(90)
+                    bk(20)
+                    left(90)
+                pu()
+                right(180)
+                bk(35)
+                pensize(1)
+            fd(40)
+        fd(5)   
+        bk(140)
+        left(90)
+        fd(60)
+        right(90)
+
+def porte():
+    if rd() >=50:
+        fillcolor(color())
+        begin_fill()
+        pd()
+        left(90)
+        fd(50)
+        right(90)
+        fd(30)
+        right(90)
+        fd(50)
+        left(90)
+        bk(30)
+        pu()
+        end_fill()
+    else :
+        fillcolor(color())
+        begin_fill()
+        pd()
+        fd(30)
+        left(90)
+        fd(35)
+        circle(15,180)
+        fd(35)
+        left(90)
+        pu()
+        end_fill()
